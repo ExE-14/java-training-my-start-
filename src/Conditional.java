@@ -868,13 +868,15 @@ class MyProgram42 {
                 "извинения_великому_радику.txt",
                 "извинения_великому_пиксу.txt",
                 "извинения_великому_кодеру.txt",
-                "извинения_выебаному_Петушку.txt"
+                "извинения_выебаному_Петушку.txt",
+                "извинения_наильке.txt",
         };
 
         try (PrintWriter writer1 = new PrintWriter(new FileWriter(filenames[0]));
              PrintWriter writer2 = new PrintWriter(new FileWriter(filenames[1]));
              PrintWriter writer3 = new PrintWriter(new FileWriter(filenames[2]));
-             PrintWriter writer4 = new PrintWriter(new FileWriter(filenames[3]))) {
+             PrintWriter writer4 = new PrintWriter(new FileWriter(filenames[3]));
+             PrintWriter writer5 = new PrintWriter(new FileWriter(filenames[4]))) {
 
             for (int i = 0; i < t; i++) {
                 String start = a[random.nextInt(a.length)];
@@ -885,6 +887,7 @@ class MyProgram42 {
                 writer2.println(fA);
                 writer3.println(fA);
                 writer4.println(fA);
+                writer5.println(fA);
                 System.out.println(fA);
 
                 if (i % Math.max(2, random.nextInt(8)) == 0) {
@@ -893,6 +896,7 @@ class MyProgram42 {
                     writer2.println(separator);
                     writer3.println(separator);
                     writer4.println(separator);
+                    writer5.println(separator);
                     System.out.println(separator);
                 }
             }
@@ -904,6 +908,7 @@ class MyProgram42 {
             writer2.println(stats);
             writer3.println(stats);
             writer4.println(stats);
+            writer5.println(stats);
 
             System.out.println(stats);
             System.out.println(String.format("\nВсе файлы успешно созданы в: %s", System.getProperty("user.dir")));
@@ -931,7 +936,7 @@ class OtchimGenerator {
     private static final Random rand = new Random();
 
     private static final String[] a = {"Маркус", "Дэрил", "Саймон", "Адольф", "Джэк", "Адам", "Дилан", "Дик", "Эрик", "Олег"};
-    private static final String[] goyda = {"Гитлер", "Dick", "Хуан", "Ломоаналов", "Джигурда", "Дебошир", "Пиписьков", "Стояк", "Дилдов", "Пиксаебатель9000"};
+    private static final String[] goyda = {"Гитлер", "Dick", "Хуан", "Ломоаналов", "Джигурда", "Дебошир", "Пиписьков", "Стояк", "Кодыров", "Пиксаебатель9000"};
     private static final String[] piska_markusa = {"по прозвищу 'Малыш'^^", "два слова: проблемы с отцом", "пикс хантер", "2 в одном)", "любит minecraft:ender_rod", "нянь по прозвищу 'Папочка'!", "FOR PIX"};
 
     public static void main(String[] args) {
@@ -970,4 +975,126 @@ class OtchimGenerator {
         );
     }
 }
+
+class MyProgram44 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long factorial = scanner.nextInt();
+        int answer = 0;
+
+        for (int i = 1; i <= log(factorial) / log(5); i++) {
+            answer += (int) (factorial / pow(5, i));
+
+        }
+        System.out.println(answer);
+
+    }
+}
+
+// по приколу написал
+class MyProgram45 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print("0");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+class MyProgram46 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("атомы");
+        String atoms = scanner.next(); // число в обертке строки
+        System.out.println("водород");
+        int H = scanner.nextInt(); // водород
+        System.out.println("гелий");
+        int He = scanner.nextInt(); // гелий
+
+        if (H + He > 100) {
+            System.out.println("вселенной не может быть");
+            return; // выход из метода
+        }
+
+        if (H + He <= 0) {
+            System.out.println("вселенная пуста");
+            return;
+        }
+
+        BigInteger atoms1 = new BigInteger(atoms); // перевод строки в целое число
+        BigInteger atoms1precent = atoms1.divide(new BigInteger("100")); // формула precent
+        BigInteger ans = atoms1precent.multiply(new BigInteger(String.valueOf(100 - H - He))); // формула calculation
+        System.out.println(ans); // вывод ответа
+    }
+}
+// по приколу написал, но работает - сравнивает два числа
+class Myprogram47 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            float n = scanner.nextInt(); // ФЛОАТ В ИНТЕ
+            float m = scanner.nextInt(); // ФЛОАТ В ИНТЕ
+
+            for (;;) {
+                System.out.println((abs(n - m) == 0) ? "числа равны" : "числа не равны");
+                System.out.println("Введите числа:");
+                n = scanner.nextInt();
+                m = scanner.nextInt();
+            }
+        } catch (Exception e) {
+            System.out.println("вы ввели не корректные данные! (float, str, char -> не корректные данные)");
+            scanner.nextLine();
+            System.out.println("Введите числа(int) заново:");
+            main(args);
+        }
+    }
+}
+
+class Myprogram48 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+        System.out.println("введите член прогрессии хуев в жопе пика: ");
+        String s = sc.nextLine(); // член прогрессии (начальное значение)
+        System.out.println("введите множитель хуев пикса: ");
+        int b = sc.nextInt(); // множитель хуев пикса
+        System.out.println("введите количество повторений: ");
+        int c = sc.nextInt(); // количество повторений хуев
+        System.out.println("------------------------------------------------------------------------------"); // разделитель
+        String[] a = {"Маркус", "Дэрил", "Саймон", "Адольф", "Джэк", "Адам", "Дилан", "Дик", "Эрик", "Олег"}; // массив стрингов ебателей пикса
+
+
+        BigInteger chlensum = new BigInteger(s); // bigInteger для хуев
+        System.out.println("сколько хуев множится в жопе пикса: " + chlensum); // вывод начального значения
+
+        for (int i = 1; i <= c; i++) {
+            BigInteger prev = chlensum; // предыдущее значение
+            chlensum = chlensum.multiply(BigInteger.valueOf(b)); // текущее значение
+            String dick = a[rand.nextInt(a.length)]; // рандомайзер для стрингов ебателей пикса
+
+            System.out.printf("Член %s № %d: %s * %d = %s%n", dick, i, prev, b, chlensum); // вывод и форматирование
+
+            try {
+                Thread.sleep(180); // эта кароч задержка хуев
+            } catch (InterruptedException e) { // кароч если ошибка в хуях
+                System.err.println(e.getMessage()); // соо о ошибке в хуях
+                break;
+            }
+
+        }
+
+        System.out.println("сколько хуев в жопе пикса: " + chlensum); // вывод итога
+    }
+}
+
+
+
 
